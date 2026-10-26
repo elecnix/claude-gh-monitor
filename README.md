@@ -48,6 +48,15 @@ claude --channels plugin:gh-monitor@claude-gh-monitor
 
 The channel server starts as an MCP subprocess. Its `gh_monitor` tool is available for the whole session.
 
+Claude Code deliberately doesn't provide a settings or environment equivalent for the development-channel flag. The bundled launcher supplies it on every launch:
+
+```bash
+install -m 0755 bin/claude-gh-monitor ~/.local/bin/claude-gh-monitor
+claude-gh-monitor
+```
+
+The launcher changes only its own command. Plain `claude` runs as before, and the development flag still shows its confirmation for each interactive session.
+
 ## Use
 
 Start monitoring from the command:

@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+
+exec claude \
+  --dangerously-load-development-channels plugin:gh-monitor@claude-gh-monitor \
+  "$@"
