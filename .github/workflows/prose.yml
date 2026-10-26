@@ -1,0 +1,22 @@
+name: prose
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+
+concurrency:
+  group: prose-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  prose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: elecnix/vale-action@a8c2225c38f990ea957c63c6aabc505dd49e6ab5 # v1.1.1
+        with:
+          vale-version: '3.20.0'

@@ -1,0 +1,20 @@
+name: dupdelta
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dupdelta-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  dupdelta:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: elecnix/dupdelta@c95b985a8e9ba75c1473f2fe3695d8478f869d53 # v0.3.0

@@ -1,0 +1,21 @@
+{
+  "name": "gh-monitor",
+  "description": "Monitor GitHub pull requests in Claude Code by wrapping the gh monitor CLI.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Nicolas Marchildon"
+  },
+  "license": "MIT",
+  "mcpServers": {
+    "gh-monitor": {
+      "command": "bun",
+      "args": ["run", "${CLAUDE_PLUGIN_ROOT}/src/server.ts"]
+    }
+  },
+  "channels": [
+    {
+      "server": "gh-monitor",
+      "displayName": "GitHub PR monitor"
+    }
+  ]
+}

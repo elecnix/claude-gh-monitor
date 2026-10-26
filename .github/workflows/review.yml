@@ -1,0 +1,29 @@
+name: review
+
+on:
+  pull_request_target:
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+
+concurrency:
+  group: cite-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  cite:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Review this pull request with Cite
+        uses: elecnix/cite@db01467aae47c33f16ec6b404d3cdbd13ec94f12 # v0.15.1
+        with:
+          tool_failure_blocks: false
+          model_api_key: ${{ secrets.OLLAMA_ELECNIX_KEY }}
+          model_base_url: https://ollama.com/v1
+          model_id: deepseek-v4.1-flash
+          fallback_model_ids: glm-5.2,kimi-k2.6
+          structured_output: tools
+          require_parameters: false
