@@ -188,8 +188,6 @@ The repository runs:
 - [`elecnix/gh-pr-body-action`](https://github.com/elecnix/gh-pr-body-action).
 - [`elecnix/dupdelta`](https://github.com/elecnix/dupdelta).
 
-The Cite workflow reads the repository secret `OLLAMA_ELECNIX_KEY` and calls `https://ollama.com/v1` with `deepseek-v4.1-flash`.
-
 ## License
 
 MIT
