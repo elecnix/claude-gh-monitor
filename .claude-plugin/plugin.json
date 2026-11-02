@@ -1,7 +1,7 @@
 {
   "name": "gh-monitor",
   "description": "Monitor GitHub pull requests in Claude Code by wrapping the gh monitor CLI.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Nicolas Marchildon"
   },
