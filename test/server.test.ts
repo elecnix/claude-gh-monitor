@@ -101,7 +101,7 @@ describe("MCP server", () => {
         experimental: { "claude/channel": {} },
         tools: { listChanged: false },
       },
-      serverInfo: { name: "claude-gh-monitor", version: "0.1.0" },
+      serverInfo: { name: "claude-gh-monitor", version: "0.1.1" },
     });
 
     child.stdin.write(

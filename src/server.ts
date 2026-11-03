@@ -17,7 +17,7 @@ import {
 } from "./gh-monitor";
 
 const SERVER_NAME = "claude-gh-monitor";
-const SERVER_VERSION = "0.1.0";
+const SERVER_VERSION = "0.1.1";
 const INSTRUCTIONS =
   "GitHub pull-request events arrive as <channel source=\"claude-gh-monitor\" ...>. " +
   "They were emitted by the gh monitor CLI after it detected a real change. " +
