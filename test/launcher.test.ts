@@ -27,7 +27,7 @@ printf '%s\\n' "$@" > "$CAPTURE"
   expect(child.exitCode).toBe(0);
   expect((await readFile(capture, "utf8")).trim().split("\n")).toEqual([
     "--dangerously-load-development-channels",
-    "plugin:gh-monitor@claude-gh-monitor",
+    "plugin:gh-monitor@elecnix-plugins",
     "--model",
     "sonnet",
   ]);
