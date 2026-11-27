@@ -28,22 +28,23 @@ Channels are a research preview. A custom channel that is not on the Anthropic-m
 
 ## Install
 
-Inside Claude Code:
+The [elecnix/claude-plugins](https://github.com/elecnix/claude-plugins) marketplace lists the plugin. Add that marketplace once, then install the plugin from it:
 
-```text
-/plugin install gh-monitor --marketplace elecnix/claude-gh-monitor
+```bash
+claude plugin marketplace add elecnix/claude-plugins
+claude plugin install gh-monitor@elecnix-plugins
 ```
 
 Start a session with the channel enabled. For local development and evaluation:
 
 ```bash
-claude --dangerously-load-development-channels plugin:gh-monitor@claude-gh-monitor
+claude --dangerously-load-development-channels plugin:gh-monitor@elecnix-plugins
 ```
 
 If your organization allowlists the plugin, use the ordinary channel flag:
 
 ```bash
-claude --channels plugin:gh-monitor@claude-gh-monitor
+claude --channels plugin:gh-monitor@elecnix-plugins
 ```
 
 The channel server starts as an MCP subprocess. Its `gh_monitor` tool is available for the whole session.

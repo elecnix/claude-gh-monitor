@@ -29,4 +29,3 @@ jobs:
       - name: Validate plugin JSON
         run: |
           jq -e . .claude-plugin/plugin.json >/dev/null
-          jq -e . .claude-plugin/marketplace.json >/dev/null
